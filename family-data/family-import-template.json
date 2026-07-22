@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "familyName": "Пример формата",
+  "people": [
+    {
+      "key": "person-example-one",
+      "firstName": "Имя",
+      "middleName": null,
+      "lastName": null,
+      "maidenName": null,
+      "gender": "unknown",
+      "birthDate": null,
+      "birthYear": null,
+      "deathDate": null,
+      "deathYear": null,
+      "birthPlace": null,
+      "biography": null,
+      "isLiving": true,
+      "dataStatus": "confirmed",
+      "notes": null
+    },
+    {
+      "key": "person-example-two",
+      "firstName": "Имя",
+      "middleName": null,
+      "lastName": null,
+      "maidenName": null,
+      "gender": "unknown",
+      "birthDate": null,
+      "birthYear": null,
+      "deathDate": null,
+      "deathYear": null,
+      "birthPlace": null,
+      "biography": null,
+      "isLiving": true,
+      "dataStatus": "needs_review",
+      "notes": "Пример человека со статусом needs_review"
+    }
+  ],
+  "relationships": [
+    {
+      "key": "relationship-parent-example",
+      "type": "parent",
+      "person1Key": "person-example-one",
+      "person2Key": "person-example-two",
+      "parentKind": "biological",
+      "confidence": "confirmed",
+      "notes": null
+    },
+    {
+      "key": "relationship-spouse-example",
+      "type": "spouse",
+      "person1Key": "person-example-one",
+      "person2Key": "person-example-two",
+      "spouseStatus": "current",
+      "confidence": "confirmed",
+      "notes": null
+    }
+  ]
+}

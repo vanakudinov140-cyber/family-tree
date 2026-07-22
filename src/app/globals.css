@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3ede3;
+  --foreground: #1b4332;
+  --surface: #fffcf8;
+  --accent-green: #2d4a3e;
+  --accent-gold: #c4a962;
+  --border-soft: #e0d6c6;
+
+  --heritage-bg: #f7f1e8;
+  --heritage-surface: #fffcf7;
+  --heritage-green: #1f332a;
+  --heritage-green-soft: #3d5a4c;
+  --heritage-bark: #5c4a3a;
+  --heritage-gold: #b8953d;
+  --heritage-text: #1a2e24;
+  --heritage-muted: #4f5f56;
+  --heritage-shadow: rgba(31, 51, 42, 0.16);
+  --heritage-branch: #4a6356;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0.85;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    transform: translateX(18px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-panel-in {
+  animation: panel-in 0.28s ease-out;
+}
+
+.auth-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+.auth-dialog-panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(480px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow: hidden;
+}
+
+.auth-dialog-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tree-canvas {
+  background-color: var(--heritage-bg);
+}
+
+.heritage-canvas {
+  background-color: transparent;
+}
+
+.diagram-canvas {
+  background-color: transparent;
+}
+
+.diagram-canvas .react-flow__edge-path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.2s ease, stroke-width 0.2s ease, opacity 0.2s ease;
+}
+
+.diagram-canvas .react-flow__minimap-mask {
+  fill: rgba(245, 240, 232, 0.55);
+  stroke: #1f332a;
+  stroke-width: 2;
+}
+
+@keyframes heritage-search-glow {
+  0% {
+    filter: drop-shadow(0 0 0 rgba(196, 169, 98, 0));
+  }
+  35% {
+    filter: drop-shadow(0 0 8px rgba(196, 169, 98, 0.45));
+  }
+  100% {
+    filter: drop-shadow(0 0 0 rgba(196, 169, 98, 0));
+  }
+}
+
+.heritage-search-flash {
+  animation: heritage-search-glow 1.5s ease-out 1;
+}
+
+.heritage-debug-box {
+  outline: 1px dashed rgba(184, 149, 61, 0.85);
+  outline-offset: -1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heritage-search-flash {
+    animation: none;
+  }
+}
+
+.family-tree-flow .react-flow__edge-path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.family-tree-flow .react-flow__arrowhead,
+.family-tree-flow .react-flow__edge marker {
+  display: none;
+}
+
+.family-tree-flow .react-flow__attribution {
+  display: none;
+}
+
+.family-tree-flow .react-flow__node-person {
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.family-tree-flow .react-flow__node-union,
+.family-tree-flow .react-flow__node-junction,
+.family-tree-flow .react-flow__node-generationLabel {
+  z-index: 5;
+  pointer-events: none !important;
+}
+
+.family-tree-flow .react-flow__node-union {
+  z-index: 6;
+}
+
+.family-tree-flow .react-flow__edges {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.family-tree-flow .react-flow__edge {
+  pointer-events: none;
+}
+
+.family-tree-flow .react-flow__background {
+  pointer-events: none;
+}
+
+.tree-toolbar {
+  pointer-events: none;
+}
+
+.tree-toolbar button {
+  pointer-events: auto;
+}
+
+.heritage-canvas .react-flow__edge-path {
+  vector-effect: non-scaling-stroke;
+}
+
+.heritage-canvas .react-flow__minimap-mask {
+  fill: rgba(247, 241, 232, 0.55);
+  stroke: #1f332a;
+  stroke-width: 2;
+}
+
+.react-flow__minimap svg {
+  border-radius: 1rem;
+}
+
+.react-flow__controls {
+  display: none;
+}
+
+@keyframes person-search-pulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(45, 74, 62, 0.28),
+      0 12px 28px rgba(45, 74, 62, 0.16);
+  }
+  70% {
+    box-shadow:
+      0 0 0 10px rgba(45, 74, 62, 0),
+      0 12px 28px rgba(45, 74, 62, 0.16);
+  }
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(45, 74, 62, 0),
+      0 12px 28px rgba(45, 74, 62, 0.16);
+  }
+}
+
+.person-search-flash .person-card {
+  animation: person-search-pulse 1.6s ease-out 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .person-search-flash .person-card {
+    animation: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .person-card {
+    width: 200px !important;
+    height: 112px !important;
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "familyName": "Example Family (fictional)",
+  "people": [
+    {
+      "key": "alexey-petrovich-examplov-1945",
+      "firstName": "Алексей",
+      "middleName": "Петрович",
+      "lastName": "Примернов",
+      "maidenName": null,
+      "gender": "male",
+      "birthDate": "1945-03-12",
+      "birthYear": 1945,
+      "deathDate": "2018-11-04",
+      "deathYear": 2018,
+      "birthPlace": "г. Примерск",
+      "biography": "Вымышленный персонаж.",
+      "isLiving": false,
+      "dataStatus": "confirmed",
+      "notes": null
+    },
+    {
+      "key": "maria-ivanovna-examplova-1948",
+      "firstName": "Мария",
+      "middleName": "Ивановна",
+      "lastName": "Примернова",
+      "maidenName": null,
+      "gender": "female",
+      "birthDate": "1948-07-22",
+      "birthYear": 1948,
+      "deathDate": null,
+      "deathYear": null,
+      "birthPlace": "г. Примерск",
+      "biography": "Вымышленный персонаж.",
+      "isLiving": true,
+      "dataStatus": "confirmed",
+      "notes": null
+    },
+    {
+      "key": "sergey-alexeevich-examplov-1972",
+      "firstName": "Сергей",
+      "middleName": "Алексеевич",
+      "lastName": "Примернов",
+      "maidenName": null,
+      "gender": "male",
+      "birthDate": "1972-05-18",
+      "birthYear": 1972,
+      "deathDate": null,
+      "deathYear": null,
+      "birthPlace": "г. Примерск",
+      "biography": "Вымышленный персонаж.",
+      "isLiving": true,
+      "dataStatus": "confirmed",
+      "notes": null
+    },
+    {
+      "key": "anna-sergeevna-examplova-1974",
+      "firstName": "Анна",
+      "middleName": "Сергеевна",
+      "lastName": "Примернова",
+      "maidenName": null,
+      "gender": "female",
+      "birthDate": "1974-09-03",
+      "birthYear": 1974,
+      "deathDate": null,
+      "deathYear": null,
+      "birthPlace": "г. Примерск",
+      "biography": "Вымышленный персонаж.",
+      "isLiving": true,
+      "dataStatus": "confirmed",
+      "notes": null
+    },
+    {
+      "key": "isolated-person-example",
+      "firstName": "Игорь",
+      "middleName": null,
+      "lastName": "Одинокий",
+      "maidenName": null,
+      "gender": "male",
+      "birthDate": null,
+      "birthYear": 1980,
+      "deathDate": null,
+      "deathYear": null,
+      "birthPlace": null,
+      "biography": "Несвязанный человек для режима «Вся семья».",
+      "isLiving": true,
+      "dataStatus": "needs_review",
+      "notes": null
+    }
+  ],
+  "relationships": [
+    {
+      "key": "rel-spouse-alexey-maria",
+      "type": "spouse",
+      "person1Key": "alexey-petrovich-examplov-1945",
+      "person2Key": "maria-ivanovna-examplova-1948",
+      "spouseStatus": "current",
+      "confidence": "confirmed",
+      "notes": null
+    },
+    {
+      "key": "rel-spouse-sergey-anna",
+      "type": "spouse",
+      "person1Key": "sergey-alexeevich-examplov-1972",
+      "person2Key": "anna-sergeevna-examplova-1974",
+      "spouseStatus": "current",
+      "confidence": "confirmed",
+      "notes": null
+    },
+    {
+      "key": "rel-parent-alexey-sergey",
+      "type": "parent",
+      "person1Key": "alexey-petrovich-examplov-1945",
+      "person2Key": "sergey-alexeevich-examplov-1972",
+      "parentKind": "biological",
+      "confidence": "confirmed",
+      "notes": null
+    },
+    {
+      "key": "rel-parent-maria-sergey",
+      "type": "parent",
+      "person1Key": "maria-ivanovna-examplova-1948",
+      "person2Key": "sergey-alexeevich-examplov-1972",
+      "parentKind": "biological",
+      "confidence": "confirmed",
+      "notes": null
+    }
+  ]
+}
