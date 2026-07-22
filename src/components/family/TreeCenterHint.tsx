@@ -32,7 +32,7 @@ export function TreeCenterHint() {
   };
 
   return (
-    <div className="pointer-events-auto absolute bottom-28 left-4 z-[200] max-w-[min(92vw,320px)] sm:bottom-auto sm:left-4 sm:top-[7.75rem]">
+    <div className="tree-center-hint pointer-events-auto absolute bottom-28 left-4 z-[200] max-w-[min(92vw,320px)] sm:bottom-auto sm:left-4 sm:top-[7.75rem]">
       {expanded ? (
         <div className="rounded-2xl border border-[#E0D6C6] bg-[#FFFCF8]/96 p-3 text-xs leading-relaxed text-[#3D4F45] shadow-[0_8px_22px_rgba(31,51,42,0.12)] backdrop-blur-md">
           <div className="mb-2 flex items-start justify-between gap-2">

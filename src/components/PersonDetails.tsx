@@ -223,8 +223,8 @@ export function PersonDetails({
           variant === "sidebar"
             ? "min-h-0 flex-1 overflow-y-auto px-5 py-5"
             : variant === "modal"
-              ? "overflow-y-auto px-5 py-5"
-              : "overflow-y-auto px-1 py-2"
+              ? "px-5 py-5"
+              : "px-1 py-2"
         }
       >
         <div className="flex flex-col items-center text-center">

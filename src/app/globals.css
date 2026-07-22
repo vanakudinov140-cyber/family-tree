@@ -63,6 +63,31 @@ body {
   animation: panel-in 0.28s ease-out;
 }
 
+/* Mobile profile sheet: bounded height + single scroll region */
+.mobile-profile-sheet {
+  max-height: 88vh; /* fallback */
+  max-height: 88dvh;
+}
+
+@supports (height: 100dvh) {
+  .mobile-profile-sheet {
+    max-height: min(92dvh, 100%);
+  }
+}
+
+.mobile-profile-scroll {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  overscroll-behavior-y: contain;
+}
+
+/* Hide tree chrome under the open mobile profile sheet */
+html[data-mobile-profile-sheet="1"] .tree-toolbar,
+html[data-mobile-profile-sheet="1"] .tree-center-hint {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .auth-dialog-overlay {
   position: fixed;
   inset: 0;

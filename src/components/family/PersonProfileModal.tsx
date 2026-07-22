@@ -52,9 +52,12 @@ export function PersonProfileModal({
         aria-modal="true"
         aria-labelledby={titleId}
         data-person-id={personId ?? undefined}
-        className="relative z-10 flex max-h-[92vh] w-full max-w-lg flex-col overflow-hidden rounded-t-3xl border border-[#D9D0C3] bg-[#FFFCF7] shadow-2xl sm:rounded-3xl"
+        className="mobile-profile-sheet relative z-10 flex w-full max-w-lg flex-col overflow-hidden rounded-t-3xl border border-[#D9D0C3] bg-[#FFFCF7] shadow-2xl sm:max-h-[min(92dvh,920px)] sm:rounded-3xl"
+        onTouchMove={(event) => {
+          event.stopPropagation();
+        }}
       >
-        <div className="flex items-center justify-between border-b border-[#EDE8DF] px-4 py-3">
+        <div className="flex shrink-0 items-center justify-between border-b border-[#EDE8DF] px-4 py-3">
           <h2
             id={titleId}
             className="text-lg font-semibold text-[#1B4332]"
@@ -63,7 +66,7 @@ export function PersonProfileModal({
           </h2>
           <button
             type="button"
-            className="nodrag nopan flex h-10 w-10 items-center justify-center rounded-full text-[#2D4A3E] hover:bg-[#F3EEE4]"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-[#2D4A3E] hover:bg-[#F3EEE4]"
             aria-label="Закрыть полный профиль"
             onClick={(event) => {
               event.stopPropagation();
@@ -73,7 +76,15 @@ export function PersonProfileModal({
             <X className="h-5 w-5" />
           </button>
         </div>
-        <div className="overflow-y-auto">{children}</div>
+        <div
+          data-profile-scroll="modal"
+          className="mobile-profile-scroll min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-y-contain touch-pan-y pb-[calc(24px+env(safe-area-inset-bottom,0px))]"
+          onTouchMove={(event) => {
+            event.stopPropagation();
+          }}
+        >
+          {children}
+        </div>
       </div>
     </div>,
     document.body,
